@@ -12,7 +12,7 @@ class CustomAppBar extends StatelessWidget {
       children: [
         Text(
           viewBarTitle,
-          style: TextStyle(
+          style: const TextStyle(
             fontSize: 28,
           ),
         ),
