@@ -3,9 +3,13 @@ import 'package:note_app/widgets/custom_icon.dart';
 
 class CustomAppBar extends StatelessWidget {
   const CustomAppBar(
-      {super.key, required this.viewBarIcon, required this.viewBarTitle});
+      {super.key,
+      required this.viewBarIcon,
+      required this.viewBarTitle,
+      this.onPressed});
   final String viewBarTitle;
   final IconData viewBarIcon;
+  final void Function()? onPressed;
   @override
   Widget build(BuildContext context) {
     return Row(
@@ -16,8 +20,11 @@ class CustomAppBar extends StatelessWidget {
             fontSize: 28,
           ),
         ),
-        Spacer(),
-        CustomIcon(icon: viewBarIcon),
+        const Spacer(),
+        CustomIcon(
+          onPressed: onPressed,
+          icon: viewBarIcon,
+        ),
       ],
     );
   }
