@@ -39,6 +39,9 @@ class _EditNoteViewBodyState extends State<EditNoteViewBody> {
             height: 50,
           ),
           CustomTextField(
+              textEditingController: TextEditingController(
+                text: widget.note.title,
+              ),
               onChanged: (value) {
                 title = value;
               },
@@ -47,11 +50,15 @@ class _EditNoteViewBodyState extends State<EditNoteViewBody> {
             height: 16,
           ),
           CustomTextField(
+            textEditingController: TextEditingController(
+              text: widget.note.subTitle,
+            ),
             onChanged: (value) {
               content = value;
             },
             hint: 'Content',
-            maxLines: 5,
+            maxLines: null,
+            minLines: 5,
           ),
         ],
       ),

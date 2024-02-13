@@ -32,7 +32,7 @@ class _AddNoteFormState extends State<AddNoteForm> {
           ),
           CustomTextField(
             onSaved: (value) {
-              title = value;
+              title = value!.trimRight();
             },
             hint: 'Title',
           ),
@@ -41,10 +41,11 @@ class _AddNoteFormState extends State<AddNoteForm> {
           ),
           CustomTextField(
             onSaved: (value) {
-              subTitle = value;
+              subTitle = value!.trimRight();
             },
             hint: 'Content',
-            maxLines: 5,
+            maxLines: null,
+            minLines: 5,
           ),
           const SizedBox(
             height: 50,

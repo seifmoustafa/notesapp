@@ -8,14 +8,19 @@ class CustomTextField extends StatelessWidget {
     this.maxLines = 1,
     this.onSaved,
     this.onChanged,
+    this.textEditingController,
+    this.minLines = 1,
   });
   final String hint;
-  final int maxLines;
+  final dynamic maxLines;
+  final dynamic minLines;
   final void Function(String)? onChanged;
   final void Function(String?)? onSaved;
+  final TextEditingController? textEditingController;
   @override
   Widget build(BuildContext context) {
     return TextFormField(
+      controller: textEditingController,
       onChanged: onChanged,
       onSaved: onSaved,
       validator: (value) {
@@ -26,6 +31,7 @@ class CustomTextField extends StatelessWidget {
         }
       },
       maxLines: maxLines,
+      minLines: minLines,
       cursorColor: kPrimaryColor,
       decoration: InputDecoration(
         hintText: hint,
