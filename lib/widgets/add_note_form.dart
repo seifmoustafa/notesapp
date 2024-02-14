@@ -33,7 +33,7 @@ class _AddNoteFormState extends State<AddNoteForm> {
           ),
           CustomTextField(
             onSaved: (value) {
-              title = value!.trimRight();
+              title = value!.trim();
             },
             hint: 'Title',
           ),
@@ -42,7 +42,7 @@ class _AddNoteFormState extends State<AddNoteForm> {
           ),
           CustomTextField(
             onSaved: (value) {
-              subTitle = value!.trimRight();
+              subTitle = value!.trim();
             },
             hint: 'Content',
             maxLines: null,

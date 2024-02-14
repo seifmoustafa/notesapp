@@ -10,8 +10,10 @@ class EditNoteView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: EditNoteViewBody(
-        note: note,
+      body: SingleChildScrollView(
+        child: EditNoteViewBody(
+          note: note,
+        ),
       ),
     );
   }
